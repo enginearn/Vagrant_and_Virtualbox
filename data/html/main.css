@@ -1,0 +1,25 @@
+body {
+    width: auto;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2 {
+    color: chocolate;
+}
+
+.image-vw {
+    width : 90vw ; 
+  }
+
+@media screen and(max-width: 480px) {
+    img {
+    border: 0;
+    }
+    }
+@media screen and(min-width: 1280px) {
+    img {
+    border: 1px solid red;
+    }
+}

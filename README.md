@@ -2,7 +2,19 @@
 
 VagrantとVirtualbox (Box: ubuntu/impish64)
 
-起動手順
+## 環境
+
+| | Description |
+| --- | :---: |
+| Vagrant Version | [2.2.19](https://www.vagrantup.com/) |
+| HOST | Windows 10 |
+| SSH | [Win32-OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases) |
+| Hyper-V | ON |
+| Console | PowerShell |
+| VirtualBox | 6.1 |
+| GUEST | Ubuntu 21.10 (Box: [ubuntu/impish64](https://app.vagrantup.com/ubuntu/boxes/impish64)) |
+
+## 起動手順
 
 vagrantをインストール後、任意のフォルダで以下を実行
 

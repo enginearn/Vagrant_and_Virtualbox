@@ -4,7 +4,7 @@ VagrantとVirtualbox (Box: ubuntu/impish64)
 
 起動手順
 
-vagrantをインストール御、任意のフォルダで以下を実行
+vagrantをインストール後、任意のフォルダで以下を実行
 
 ```$ vagrant init ubuntu/impish64```
 

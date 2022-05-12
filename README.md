@@ -10,6 +10,7 @@ VagrantとVirtualbox (Box: ubuntu/impish64)
 | HOST | Windows 10 |
 | SSH | [Win32-OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases) |
 | Hyper-V | ON |
+| Docker Desktop | Installed, but not running |
 | Console | PowerShell |
 | VirtualBox | 6.1 |
 | GUEST | Ubuntu 21.10 (Box: [ubuntu/impish64](https://app.vagrantup.com/ubuntu/boxes/impish64)) |
@@ -111,4 +112,28 @@ Welcome to Ubuntu 21.10 (GNU/Linux 5.13.0-41-generic x86_64)
   
 # GUEST: Ubuntu 21.10 bash
 vagrant@ubuntu-impish:~$
+```
+
+以下のエラーが発生した場合、
+
+```
+An error occurred in the underlying SSH library that Vagrant uses. The error message is shown below. 
+In many cases, errors from this library are caused by ssh-agent issues. 
+Try disabling your SSH agent or removing some keys and try again.
+```
+
+以下のエラーが発生した場合、rubyのプロセスが残ってしまっていることが原因なので、
+
+タスクマネージャーで```Ruby Interpreter (CUI)```をKillする
+
+```
+An action 'up' was attempted on the machine 'default',
+but another process is already executing an action on the machine.  
+Vagrant locks each machine for access by only one process at a time.
+Please wait until the other Vagrant process finishes modifying this 
+machine, then try again.
+
+If you believe this message is in error, please check the process   
+listing for any "ruby" or "vagrant" processes and kill them. Then   
+try again.
 ```

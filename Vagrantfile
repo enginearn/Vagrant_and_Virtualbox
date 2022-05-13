@@ -34,10 +34,6 @@ Vagrant.configure("2") do |config|
   # via 127.0.0.1 to disable public access
   config.vm.network "forwarded_port", guest: 80, host: 8099, host_ip: "127.0.0.1"
 
-  # Avoid SSH Error
-  config.ssh.private_key_path = ["C:/Users/nagar/.vagrant.d/insecure_private_key"]
-  config.ssh.insert_key = true
-
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
   config.vm.network "private_network", ip: "192.168.33.10"

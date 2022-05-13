@@ -15,13 +15,13 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "ubuntu/impish64"
   config.vm.provision :shell, path: "bootstrap.sh"
-  config.vm.network :forwarded_port, guest: 80, host: 8888
+  config.vm.network :forwarded_port, guest: 80, host: 8099
   config.vm.boot_timeout = 600
-
+  
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
-  # config.vm.box_check_update = false
+  config.vm.box_check_update = true
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -32,7 +32,11 @@ Vagrant.configure("2") do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine and only allow access
   # via 127.0.0.1 to disable public access
-  config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+  config.vm.network "forwarded_port", guest: 80, host: 8099, host_ip: "127.0.0.1"
+
+  # Avoid SSH Error
+  config.ssh.private_key_path = ["C:/Users/nagar/.vagrant.d/insecure_private_key"]
+  config.ssh.insert_key = true
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -41,7 +45,7 @@ Vagrant.configure("2") do |config|
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
   # your network.
-  config.vm.network "public_network"
+  # config.vm.network "public_network"
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
@@ -55,8 +59,8 @@ Vagrant.configure("2") do |config|
   # Example for VirtualBox:
   #
   # config.vm.provider "virtualbox" do |vb|
-  #   # Display the VirtualBox GUI when booting the machine
-  #   # vb.gui = true
+    # Display the VirtualBox GUI when booting the machine
+    # vb.gui = true
   #
   #   # Customize the amount of memory on the VM:
   #   vb.memory = "1024"

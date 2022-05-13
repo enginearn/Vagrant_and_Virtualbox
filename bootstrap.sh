@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-sudo apt-get update && upgrade -y
+sudo apt-get update
+sudo apt-get upgrade -y
 sudo apt-get install -y apache2
 if ! [ -L /var/www ]; then
   sudo rm -rf /var/www
